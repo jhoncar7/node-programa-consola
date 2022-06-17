@@ -1,0 +1,2 @@
+npm i inquirer // paquete para mostrar menu de opciones en la consola
+npm i uuid
