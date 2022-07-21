@@ -44,7 +44,7 @@ const main = async () => {
                 break;
         }
 
-        //guardarDB(tareas.getListado);
+        //guardarDB(tareas.getListado); //TODO: Guardar en archivo JSON
 
         await pausa();
         console.clear();
