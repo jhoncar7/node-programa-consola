@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "nombre": "Argentina",
+        "abreviacion": "ARG"
+    },
+    {
+        "id": "2",
+        "nombre": "Brasil",
+        "abreviacion": "BRA"
+    },
+    {
+        "id": "3",
+        "nombre": "Colombia",
+        "abreviacion": "Col"
+    },
+    {
+        "id": "4",
+        "nombre": "Chile",
+        "abreviacion": "Chi"
+    },
+    {
+        "id": "5",
+        "nombre": "Uruguay",
+        "abreviacion": "Uru"
+    },
+    {
+        "id": "6",
+        "nombre": "Peru",
+        "abreviacion": "Per"
+    },
+    {
+        "id": "7",
+        "nombre": "Ecuador",
+        "abreviacion": "Ecu"
+    },
+    {
+        "id": "8",
+        "nombre": "Mexico",
+        "abreviacion": "Mex"
+    },
+    {
+        "id": "9",
+        "nombre": "Panama",
+        "abreviacion": "Pan"
+    }
+]

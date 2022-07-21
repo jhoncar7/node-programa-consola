@@ -9,27 +9,15 @@ const preguntas = [
         choices: [
             {
                 value: '1',
-                name: `${'1.'.green} Crear tarea`,
+                name: `${'1.'.green} Listar Cuentas y Subcuentas`,
             },
             {
                 value: '2',
-                name: `${'2.'.green} Listar tareas`,
+                name: `${'2.'.green} Listar Paises`,
             },
             {
                 value: '3',
-                name: `${'3.'.green} Tareas completas`,
-            },
-            {
-                value: '4',
-                name: `${'4.'.green} Tareas pendientes`,
-            },
-            {
-                value: '5',
-                name: `${'5.'.green} Completar tarea (s)`,
-            },
-            {
-                value: '6',
-                name: `${'6.'.green} Borrar tarea`,
+                name: `${'3.'.green} Crear ADI por pais`,
             },
             {
                 value: '0',
@@ -46,18 +34,7 @@ const inquirerMenu = async () => {
     console.log('Seleccione una opcion:'.white);
     console.log('====================================\n'.green);
 
-    const { opcion } = await inquirer
-        .prompt(preguntas)
-    /*         .then((answers) => {
-                // Use user feedback for... whatever!!
-            })
-            .catch((error) => {
-                if (error.isTtyError) {
-                    // Prompt couldn't be rendered in the current environment
-                } else {
-                    // Something else went wrong
-                }
-            }); */
+    const { opcion } = await inquirer.prompt(preguntas);
 
     return opcion;
 }
@@ -89,11 +66,11 @@ const pausa = async () => {
     }]);
 }
 
-const listadoTareasBorrar = async (tareas = []) => {
-    const choices = tareas.map((tarea, idx) => {
+const listadarPaisesCrearADI = async (listado = []) => {
+    const choices = listado.map((lis, idx) => {
         return {
-            value: tarea.id,
-            name: `${(idx + 1).toString().green}. ${tarea.desc}`
+            value: lis.id,
+            name: `${(idx + 1).toString().green}. ${lis.nombre}`,
         }
     })
 
@@ -107,7 +84,7 @@ const listadoTareasBorrar = async (tareas = []) => {
         {
             type: 'list',
             name: 'id',
-            message: 'Seleccione una tarea para borrar',
+            message: 'Seleccione una opcion de la lista para borrar',
             choices
         }
     ]
@@ -153,7 +130,7 @@ module.exports = {
     inquirerMenu,
     pausa,
     leerInput,
-    listadoTareasBorrar,
+    listadarPaisesCrearADI,
     confirmar,
     mostrarListadoCheckList
 }

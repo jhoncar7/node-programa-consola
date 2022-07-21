@@ -1,20 +1,20 @@
-const Tarea = require('./tarea');
+const Pais = require('./cuenta');
 
-class Tareas {
+class Cuentas {
     _listado = {};
 
     constructor() {
         this._listado = {};
     }
 
-    crearTarea(desc = '') {
+    /* crearTarea(desc = '') {
         const tarea = new Tarea(desc);
         this._listado[tarea.id] = tarea;
-    }
+    } */
 
-    cargarTareas(listado = []) {
-        listado.forEach((tarea) => {
-            this._listado[tarea.id] = tarea;
+    cargarCuentas(listado = []) {
+        listado.forEach((cuenta) => {
+            this._listado[cuenta.Descripción] = cuenta;
         })
     }
 
@@ -28,15 +28,18 @@ class Tareas {
         return listado;
     }
 
-    listadoCompleto() {
-        console.log();
-        this.getListado.forEach((tarea, index) => {
-            const idx = `${index + 1}`.green;
-            const { desc, completadoEn } = tarea;
-            const estado = (completadoEn) ? 'Completada'.green : 'Pendiente'.red;
+    get getListadoOrigin() {
+        return this._listado;
+    }
 
-            console.log(`${idx} ${desc} :: ${estado}`);
+    listadoCompleto() {
+        console.log('\tNombre\t\t'.yellow, 'Cuenta\t'.cyan, 'SubCuenta'.magenta);
+        this.getListado.forEach((cuenta, index) => {
+            const idx = `${index + 1}`.green;
+            const { Descripción, Cuenta, SubCta } = cuenta;
+            console.log(`${idx}.${Descripción}${'->'.green}  ${`${Cuenta}`.cyan}  ${`${SubCta}`.magenta}`);
         })
+
     }
 
     listarPendientesCompletadas(completadas = true) {
@@ -84,4 +87,4 @@ class Tareas {
     }
 }
 
-module.exports = Tareas;
+module.exports = Cuentas;
